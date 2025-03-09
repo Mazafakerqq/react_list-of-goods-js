@@ -33,7 +33,7 @@ function solutionGoods(goods, sortField, reversed) {
   }
 
   if (reversed) {
-    newGoods = newGoods.toReversed();
+    newGoods = newGoods.reverse();
   }
 
   return newGoods;
@@ -84,7 +84,9 @@ export const App = () => {
 
       <ul>
         {visibleGoods.map(good => (
-          <li data-cy="Good">{good}</li>
+          <li key={good} data-cy="Good">
+            {good}
+          </li>
         ))}
       </ul>
     </div>
